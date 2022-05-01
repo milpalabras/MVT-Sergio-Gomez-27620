@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content  %}
+
+   <!-- Masthead-->
+   <header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h1 class="mb-5">Entregable MVT Sergio Gomez</h1>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section class="testimonials text-center bg-light">
+    <div class="container">
+        <h2 class="mb-5">Template que muestra los datos de mi familiares</h2>
+        <div class="row">
+            {% for familiar in familiares %}  
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="{{familiar.foto.url}}" alt="..." />
+                    <h5>{{familiar.nombre}}</h5>
+                    <h5>{{familiar.apellido}}</h5>
+                    <p class="font-weight-light mb-0">{{familiar.get_tipo_de_pariente_display}}</p>
+                    <p class="font-weight-light mb-0"> Fecha de nacimiento{{familiar.fecha_de_nacimiento}}</p>
+                    <p class="font-weight-light mb-0">Hijos:{{familiar.cantidad_de_hijos}}</p>
+                </div>
+            </div>
+                
+            
+            {% endfor %}
+
+          
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
